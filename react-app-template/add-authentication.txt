@@ -1,0 +1,67 @@
+steps to add @jsaundersdev/authentication-react to a new project
+
+** relevant files shown in () at end of each step
+
+- add @jsaundersdev/authentication-react to dependencies (package.json)
+
+- implement getHost() function (api.js)
+
+- create file src/modules/actions.auth.js
+
+- export AuthActionCreators in src/reducers/actions/actions.auth.js (actions.auth.js)
+
+- add reduceAuth to root reducer (root.js)
+    import {reduceAuth} from '@jsaundersdev/react-authentication';
+    export const rootReducer = combineReducers({
+      auth: reduceAuth,
+      productList: reduceProductList,
+      productPlans: reduceProductPlans,
+      checkout: reduceCheckout,
+    });
+
+- call init() method from constructor to fetch the user (App.js)
+    init() {
+      this.applyAction(AuthActionCreators.fetchUserFromStoredToken());
+    }
+
+- add LoadingWrapper around  <div className="App"> to check for user before anything else (App.js)
+    <LoadingWrapper isLoading={ this.props.isLoadingUser || !this.props.hasLoadedUser }>
+
+- add RouteBuilder (App.js)
+    <RoutesBuilder
+        isAuthenticated={ this.props.isAuthenticated }
+        routes={ [
+          RouteConfig._redirect({from: '/', to: ROUTES.home}),
+          // login
+          RouteConfig._public({
+            path: ROUTES.login,
+            component: LoginPageContainer,
+            props: {
+              homePath: ROUTES.home,
+              applyAction: this.applyAction,
+              authActionCreators: AuthActionCreators
+            }
+          }),
+          // checkout
+          RouteConfig._private({
+            path: '/checkout/:step/:productId?/:planId?/:subscriptionId?',
+            component: DynamicCheckoutContainer,
+            props: {stripeSettings: STRIPE_SETTINGS}
+          }),
+        ] }
+      />
+
+- add loginRoute to App.js (App.js)
+    included in RouteBuilder step
+
+- add authButton to App.js (App.js)
+    <AuthButton
+      isAuthenticated={ this.props.isAuthenticated }
+      applyAction={ this.applyAction }
+      loginPath={ ROUTES.login }
+      authActionCreators={ AuthActionCreators }
+    />
+
+- add auth URL to django project (remember to check that the URL takes package.json proxy into account)
+    from rest_framework.authtoken import views
+    url(r'^api-token-auth/', views.obtain_auth_token),

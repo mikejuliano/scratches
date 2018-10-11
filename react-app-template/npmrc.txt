@@ -1,0 +1,1 @@
+@jsaundersdev:registry=http://nexus.jsaundersdev.com:8081/repository/jsaundersdev-npm/

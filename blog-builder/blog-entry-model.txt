@@ -1,0 +1,11 @@
+title:String
+slug:String
+content:String
+published:Boolean
+author:User
+category:
+tags:Tag[]
+description:String
+featuredImage:
+buildConfig:BlogConfig
+

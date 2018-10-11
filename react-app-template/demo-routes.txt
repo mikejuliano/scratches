@@ -1,0 +1,81 @@
+import {SubscriberDetailDemo} from '../modules/subscriptions/demo/SubscriberDetailDemo';
+import {ProductPlanComparisonDemo} from '../modules/products/demo/ProductPlanComparisonDemo';
+import {CheckoutSuccessDemo} from '../modules/checkout/demo/CheckoutSuccessDemo';
+import {StripeCheckoutDemo} from '../modules/stripe/demo/StripeCheckoutDemo';
+import {ProductPlanSelectDemo} from '../modules/products/demo/ProductPlanSelectDemo';
+import {stripeSecretKey} from '@jsaundersdev/paywall-libs';
+import {StripeElementsChargeDemo} from '../modules/stripe/demo/StripeElementsChargeDemo';
+import {RouteConfig} from '@jsaundersdev/react-common';
+import {CheckoutNavigationDemo} from '../modules/checkout/demo/CheckoutNavigationDemo';
+import {InstallationInstructions} from '../common/components/InstallationInstructions';
+import {StripeElementsSubscribeDemo} from '../modules/stripe/demo/StripeElementsSubscribeDemo';
+
+export const DEMO_HOME = '/demo';
+const demoPath = (path = '') => `${DEMO_HOME}/${path}`;
+
+export const DEMO_ROUTES = [
+  //RouteConfig._redirect({from: '/', to: DEMO_HOME}),
+  RouteConfig._public({
+    label: 'Stripe Elements (subscribe)',
+    path: demoPath('stripe-elements-subscribe'),
+    component: StripeElementsSubscribeDemo,
+    props: {secretKey: stripeSecretKey},
+    inNav: true,
+  }),
+  RouteConfig._public({
+    label: 'Installation Instructions',
+    path: demoPath('installation'),
+    component: InstallationInstructions,
+    props: {},
+    inNav: true,
+  }),
+  RouteConfig._public({
+    label: 'Stripe Checkout (subscribe)',
+    path: demoPath('stripe-checkout'),
+    component: StripeCheckoutDemo,
+    props: {secretKey: stripeSecretKey},
+    inNav: true,
+  }),
+  RouteConfig._public({
+    label: 'Stripe Elements (charge)',
+    path: demoPath('stripe-elements-charge'),
+    component: StripeElementsChargeDemo,
+    props: {secretKey: stripeSecretKey},
+    inNav: true,
+  }),
+  RouteConfig._public({
+    label: 'Product Plan Select',
+    path: demoPath('product-plan-select'),
+    component: ProductPlanSelectDemo,
+    props: {},
+    inNav: true,
+  }),
+  RouteConfig._public({
+    label: 'Product Plan Comparison',
+    path: demoPath('product-plan-comparison'),
+    component: ProductPlanComparisonDemo,
+    props: {},
+    inNav: true,
+  }),
+  RouteConfig._public({
+    label: 'Checkout Success',
+    path: demoPath('checkout-success'),
+    component: CheckoutSuccessDemo,
+    props: {},
+    inNav: true,
+  }),
+  RouteConfig._public({
+    label: 'Subscriber Detail',
+    path: demoPath('subscriber-detail'),
+    component: SubscriberDetailDemo,
+    props: {},
+    inNav: true,
+  }),
+  RouteConfig._public({
+    label: 'Checkout Navigation',
+    path: demoPath('checkout-navigation'),
+    component: CheckoutNavigationDemo,
+    props: {},
+    inNav: true,
+  }),
+];

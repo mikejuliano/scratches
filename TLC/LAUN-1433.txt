@@ -1,0 +1,88 @@
+We are simplifying the data model to the below.
+Code will need refactored to handle this.
+This is also for cleaning up technical debt around 'bins'.
+
+https://docs.google.com/document/d/1mMnPwUlPCMlLoUa1pPCclLSpbpUCjCiVpEojBuUpB60/edit#
+
+Schedule: {
+	Id: null,
+	Types: [ ],
+	HoursOfOperation: [ ],
+	SpecialDays: [ ],
+
+	//This is new
+	AppliesTo: [
+		{
+			Item: { // SimpleInstance
+			    Id: '2002-A',
+            	Model: Unit | Location | Future?
+            	Display: 'Behind Coffee Station'
+			},
+            Meta: {
+                LocationName: 'Sutherland',
+                LocationId: '123,
+                ClientId: 'pitt_id'
+		    }
+		}
+	],
+	Configuration: { SchedulingBlackoutHours: null, AdvanceSchedulingDays: null }
+}
+
+Location is now greatly simplified, and likely not needed much at runtime.
+
+Location: {
+	Id: null,
+	Name: null,
+	Types: [ ],
+	Coordinates: { Longitude: null, Latitude: null },
+	Address: { Label: null, IsDefault: false, LineOne: null, LineTwo: null, City: null, State: { Abbreviation: null, Name: null }, Zipcode: null },
+
+	// Going away (replaced with concepts in other data)
+	x SpecialInstructions: null,
+	x Bags: [ ],
+	x Bins: [ ],
+	x Schedules: [ ],
+	x Configuration: { SchedulingBlackoutHours: null, AdvanceSchedulingDays: null }
+}
+
+Not much changes on the Unit side, some removal of fields
+
+Unit: {
+	Id: null,
+	Name: null,
+	// Remove unit name and unit id, just use name / id.
+	    I believe this was carried over from CleanCube - some values needed in their system and not ours
+	x UnitName: null,
+	x UnitId: null,
+	MaxHeight: null,
+	MaxWidth: null,
+	Status: {
+		Name: null,
+		Label: null,
+		Description: null,
+		IsActive: false,
+		ActionsByRole: [ ],
+		Messages: {
+			Default: {
+				Key: null,
+				Value: [ ]
+			}
+		}
+	},
+	Lockers: [ ],
+	Location: { Id: null, Display: null, Model: null }
+}
+
+
+UsedScheduleSlot Model Change
+UsedScheduleSlot.Items
+is defined as a string[] in the model, but the data is all number[].  We’ll need a data cleanup task for this.
+
+
+
+getAvailableTimeSlots
+scheduleTimeSlot
+
+
+isFull ?
+are bins completely gone?

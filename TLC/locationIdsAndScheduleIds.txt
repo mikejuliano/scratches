@@ -1,0 +1,217 @@
+[
+  {
+    "locationId": "1004",
+    "locationName": "Yorktown Hall",
+    "scheduleId": 1001
+  },
+  {
+    "locationId": "1005",
+    "locationName": "Wade Commons",
+    "scheduleId": 1001
+  },
+  {
+    "locationId": "1007",
+    "locationName": "Pickup Location 2",
+    "scheduleId": 1001
+  },
+  {
+    "locationId": "",
+    "locationName": "Steve's Test Location",
+    "scheduleId": 1001
+  },
+  {
+    "locationId": "1008",
+    "locationName": "Lassiter Student Center",
+    "scheduleId": "1000A"
+  },
+  {
+    "locationId": "1008",
+    "locationName": "Lassiter Student Center",
+    "scheduleId": 1002
+  },
+  {
+    "locationId": "1036",
+    "locationName": "Jefferson Center",
+    "scheduleId": 1001
+  },
+  {
+    "locationId": "1036",
+    "locationName": "Jefferson Center",
+    "scheduleId": 1002
+  },
+  {
+    "locationId": "1062",
+    "locationName": "ConkU Drop2",
+    "scheduleId": 1001
+  },
+  {
+    "locationId": "1035",
+    "locationName": "Flagler Towers",
+    "scheduleId": 1001
+  },
+  {
+    "locationId": "1061",
+    "locationName": "ConkU - Pick1",
+    "scheduleId": 1001
+  },
+  {
+    "locationId": "1013",
+    "locationName": "Washington Hall",
+    "scheduleId": 1001
+  },
+  {
+    "locationId": "1014",
+    "locationName": "Salem Hall (pick up)",
+    "scheduleId": 1001
+  },
+  {
+    "locationId": "1052",
+    "locationName": "TLC Student Center",
+    "scheduleId": 1001
+  },
+  {
+    "locationId": "1015",
+    "locationName": "Evans Hall (North ground level entry)",
+    "scheduleId": 1001
+  },
+  {
+    "locationId": "1034",
+    "locationName": "Samaritan Gardens",
+    "scheduleId": 1001
+  },
+  {
+    "locationId": "1017",
+    "locationName": "Intercontinental Cleveland Hotel - Social Room",
+    "scheduleId": 1001
+  },
+  {
+    "locationId": "2001",
+    "locationName": "Sutherland Hall",
+    "scheduleId": 1001
+  },
+  {
+    "locationId": "2001",
+    "locationName": "Sutherland Hall",
+    "scheduleId": "2001-A1"
+  },
+  {
+    "locationId": "2001",
+    "locationName": "Sutherland Hall",
+    "scheduleId": "2001-B1"
+  },
+  {
+    "locationId": "1050",
+    "locationName": "TLC Bookstore",
+    "scheduleId": 1001
+  },
+  {
+    "locationId": "1050",
+    "locationName": "TLC Bookstore",
+    "scheduleId": 1002
+  },
+  {
+    "locationId": "1018",
+    "locationName": "Double Tree Tudor Arms Hotel - Social Room",
+    "scheduleId": 1001
+  },
+  {
+    "locationId": "1019",
+    "locationName": "Salem Hall (drop off)",
+    "scheduleId": 1001
+  },
+  {
+    "locationId": "1060",
+    "locationName": "ConkU - Drop 1",
+    "scheduleId": 1001
+  },
+  {
+    "locationId": "2000",
+    "locationName": "Litchfield Towers",
+    "scheduleId": 1001
+  },
+  {
+    "locationId": "2000",
+    "locationName": "Litchfield Towers",
+    "scheduleId": "2000-A1"
+  },
+  {
+    "locationId": "2000",
+    "locationName": "Litchfield Towers",
+    "scheduleId": "2000-B1"
+  },
+  {
+    "locationId": "2000",
+    "locationName": "Litchfield Towers",
+    "scheduleId": "2000-C1"
+  },
+  {
+    "locationId": "2000",
+    "locationName": "Litchfield Towers",
+    "scheduleId": "2000-D1"
+  },
+  {
+    "locationId": "1023",
+    "locationName": "Intercontinental Suites - Social Room",
+    "scheduleId": 1001
+  },
+  {
+    "locationId": "1051",
+    "locationName": "TLC Res Hall 1 - test",
+    "scheduleId": 1001
+  },
+  {
+    "locationId": "2003",
+    "locationName": "Lothrop Hall",
+    "scheduleId": "2003"
+  },
+  {
+    "locationId": "2003",
+    "locationName": "Lothrop Hall",
+    "scheduleId": "2003-A1"
+  },
+  {
+    "locationId": "2002",
+    "locationName": "Bouquet Gardens - Building A",
+    "scheduleId": "2002-A1"
+  },
+  {
+    "locationId": "2002",
+    "locationName": "Bouquet Gardens - Building A",
+    "scheduleId": "2002-A1"
+  },
+  {
+    "locationId": "1053",
+    "locationName": "TLC Res Hall 2",
+    "scheduleId": 1001
+  },
+  {
+    "locationId": "1025",
+    "locationName": "Rinker Hall",
+    "scheduleId": 1001
+  },
+  {
+    "locationId": "1026",
+    "locationName": "Pickup Location 1",
+    "scheduleId": 1001
+  },
+  {
+    "locationId": "1027",
+    "locationName": "Courtyard Cleveland University Circle - Social Room",
+    "scheduleId": 1001
+  },
+  {
+    "locationId": "1029",
+    "locationName": "Oceanview Hall (ODP)",
+    "scheduleId": 1001
+  },
+  {
+    "locationId": "1031",
+    "locationName": "Pickup Location 2",
+    "scheduleId": 1001
+  },
+  {
+    "locationId": "1032",
+    "locationName": "Baxter Hall",
+    "scheduleId": 1001
+  }
+]

@@ -1,0 +1,897 @@
+<div class="blog-renderer" style="padding:0px" data-reactroot="">
+  <div class="grid-container">
+    <div class="grid-x grid-padding-x ">
+      <div class="cell  medium-12">
+        <div>
+          <div style="text-align:left">
+            <section>
+              <div class="grid-x grid-padding-x ">
+                <div class="cell  medium-12">
+                  <span style="text-align:left"><h2 id="h2-create-react-app">Create React App</h2></span>
+                </div>
+              </div>
+              <div class="grid-x grid-padding-x ">
+                <div class="cell  medium-12">
+                  <p>
+                    <span>Navigate to your tutorial directory and create a new react app.</span>
+                  </p>
+                </div>
+              </div>
+              <div class="grid-x grid-padding-x ">
+                <div class="cell  medium-12">
+                  <textarea style="margin-top:20px;margin-bottom:20px" id="create-react-app-web" readonly="">
+                    $ create-react-app web
+                  </textarea>
+                </div>
+              </div>
+              <div class="grid-x grid-padding-x ">
+                <div class="cell  medium-12">
+                  <p>
+                    <span>We will need to install react&#x27;s router.</span>
+                  </p>
+                </div>
+              </div>
+              <div class="grid-x grid-padding-x ">
+                <div class="cell  medium-12">
+                  <p>
+                    <span></span>
+                    <span style="font-weight:bold;color:#CC4B37">TODO: We are using yarn because...</span>
+                    <span></span>
+                  </p>
+                </div>
+              </div>
+              <div class="grid-x grid-padding-x ">
+                <div class="cell  medium-12">
+                  <textarea style="margin-top:20px;margin-bottom:20px" id="yarn-add-react-router-dom" readonly="">
+                    $ yarn add react-router-dom
+                  </textarea>
+                </div>
+              </div>
+              <div class="grid-x grid-padding-x ">
+                <div class="cell  medium-12">
+                  <p>
+                    <span>Open package.json and add the proxy line. This will direct any requests from
+                      http://localhost:3000 (where our react app is running) to http://localhost:8000 (where our django
+                      server is running).
+                    </span>
+                  </p>
+                </div>
+              </div>
+              <div class="grid-x grid-padding-x ">
+                <div class="cell  medium-12">
+                  <div class="blog-image-wrapper">
+                    <span>
+                      <img src="https://res.cloudinary.com/dmh4ucizb/image/upload/v1524698256/auth-tutorial-01/21-proxy.png"
+                           style="styles:[object Object]"
+                           alt=""/>
+                    </span>
+                  </div>
+                </div>
+              </div>
+              <div class="grid-x grid-padding-x ">
+                <div class="cell  medium-12">
+                  <p>
+                    <span>Start the app.</span>
+                  </p>
+                </div>
+              </div>
+              <div class="grid-x grid-padding-x ">
+                <div class="cell  medium-12">
+                  <textarea style="margin-top:20px;margin-bottom:20px" id="yarn-start" readonly="">
+                    $ yarn start
+                  </textarea>
+                </div>
+              </div>
+              <div class="grid-x grid-padding-x ">
+                <div class="cell  medium-12">
+                  <p>
+                    <span>I usually keep one terminal open with the running application and another open at the src
+                      directory...
+                    </span>
+                  </p>
+                </div>
+              </div>
+              <div class="grid-x grid-padding-x ">
+                <div class="cell  medium-12">
+                  <div class="blog-image-wrapper">
+                    <span>
+                      <img src="https://res.cloudinary.com/dmh4ucizb/image/upload/v1524698256/auth-tutorial-01/22-iterm.png"
+                           style="styles:[object Object]"
+                           alt=""/>
+                    </span>
+                  </div>
+                </div>
+              </div>
+              <div class="grid-x grid-padding-x ">
+                <div class="cell  medium-12">
+                  <p>
+                    <span>The source for what we&#x27;ll be building can be found</span>
+                    <a href="https://github.com/mikejuliano/contact-manager-web/blob/master/src/"
+                       target="_blank">here</a>
+                    <span>. We&#x27;ll be walking through each piece individually, but feel free to use this as a
+                      starting point for your app if you wish.
+                    </span>
+                  </p>
+                </div>
+              </div>
+              <div class="grid-x grid-padding-x ">
+                <div class="cell  medium-12"><br/></div>
+              </div>
+              <div class="grid-x grid-padding-x ">
+                <div class="cell  medium-12">
+                  <p>
+                    <span></span>
+                    <span style="color:#4b4b4b;font-style:italic">Note:</span>
+                    <span> I chose to break up the components into separate files like I would in a production app. I&#x27;m
+                      not a fan of tutorials that cram a bunch of components into one file because the content of the
+                      tutorial is short. I think it&#x27;s good to &quot;practice like you play.&quot;
+                    </span>
+                  </p>
+                </div>
+              </div>
+              <div class="grid-x grid-padding-x ">
+                <div class="cell  medium-12">
+                  <span style="text-align:left"><h3 id="h3-route-components">Route Components</h3></span>
+                </div>
+              </div>
+              <div class="grid-x grid-padding-x ">
+                <div class="cell  medium-12">
+                  <textarea style="margin-top:20px;margin-bottom:20px" id="create-route-components" readonly="">
+                    $ cd web/src
+                    $ touch PrivateRoute.js
+                    $ touch PublicRoute.js
+                  </textarea>
+                </div>
+              </div>
+              <div class="grid-x grid-padding-x ">
+                <div class="cell  medium-12">
+                  <p>
+                    <span>We&#x27;ll create two route components that will make it easy to determine pages that require
+                      authentication and those that do not. Enter the following code into
+                    </span>
+                    <span style="color:#4b4b4b;font-style:italic">PrivateRoute.js</span>
+                    <span> and</span>
+                    <span style="color:#4b4b4b;font-style:italic">PublicRoute.js</span>
+                    <span></span>
+                  </p>
+                </div>
+              </div>
+              <div class="grid-x grid-padding-x ">
+                <div class="cell  medium-12">
+                  <p>
+                    <span>The</span>
+                    <span style="color:#4b4b4b;font-style:italic">PrivateRoute</span>
+                    <span> component accepts</span>
+                    <span style="color:#4b4b4b;font-style:italic">isAuthenticated</span>
+                    <span>,</span>
+                    <span style="color:#4b4b4b;font-style:italic">redirectRoute</span>
+                    <span>, and</span>
+                    <span style="color:#4b4b4b;font-style:italic">component</span>
+                    <span> as props. If</span>
+                    <span style="color:#4b4b4b;font-style:italic">isAuthenticated</span>
+                    <span> evaluates to true, we&#x27;ll render the route with the component that was passed in. Else,
+                      we&#x27;ll redirect to the
+                    </span>
+                    <span style="color:#4b4b4b;font-style:italic">redirectRoute</span>
+                    <span> that was passed in (which defaults to</span>
+                    <span style="color:#4b4b4b;font-style:italic">/login</span>
+                    <span> if undefined).</span>
+                  </p>
+                </div>
+              </div>
+              <div class="grid-x grid-padding-x ">
+                <div class="cell  medium-12">
+                  <textarea style="margin-top:20px;margin-bottom:20px" id="private-route" readonly="">
+                    // PrivateRoute.js
+                    import React, {Component} from &#x27;react&#x27;;
+                    import {Route, Redirect} from &quot;react-router-dom&quot;;
+                    export const PrivateRoute = ({component: Component, ...rest}) =&gt; {
+                    const {isAuthenticated, redirectRoute = &#x27;/login&#x27;} = rest;
+                    return (
+                    &lt;Route
+                    { ...rest }
+                    render={ props =&gt;
+                    isAuthenticated
+                    ? &lt;Component { ...props } { ...rest }/&gt;
+                    : (
+                    &lt;Redirect
+                    to={ {
+                    pathname: redirectRoute,
+                    state: {from: props.location}
+                    } }
+                    /&gt;
+                    )
+                    }
+                    /&gt;
+                    )
+                    };
+                  </textarea>
+                </div>
+              </div>
+              <div class="grid-x grid-padding-x ">
+                <div class="cell  medium-12">
+                  <p>
+                    <span>The</span>
+                    <span style="color:#4b4b4b;font-style:italic">PublicRoute</span>
+                    <span> component will be used for routes that don&#x27;t require authentication (i.e. the login
+                      page). While this component isn&#x27;t 100% necessary, it will allow for a cleaner and more
+                      consistent display for route definitions, as we&#x27;ll see shortly).
+                    </span>
+                  </p>
+                </div>
+              </div>
+              <div class="grid-x grid-padding-x ">
+                <div class="cell  medium-12">
+                  <textarea style="margin-top:20px;margin-bottom:20px" id="public-route" readonly="">
+                    // PublicRoute.js
+                    import React, {Component} from &#x27;react&#x27;;
+                    import {Route} from &quot;react-router-dom&quot;;
+                    export const PublicRoute = ({component: Component, ...rest}) =&gt; {
+                    return (
+                    &lt;Route
+                    { ...rest }
+                    render={ props =&gt;
+                    &lt;Component { ...props } { ...rest }/&gt;
+                    }
+                    /&gt;
+                    )
+                    };
+                  </textarea>
+                </div>
+              </div>
+              <div class="grid-x grid-padding-x ">
+                <div class="cell  medium-12">
+                  <span style="text-align:left"><h3 id="h3-home-page">Home Page</h3></span>
+                </div>
+              </div>
+              <div class="grid-x grid-padding-x ">
+                <div class="cell  medium-12">
+                  <textarea style="margin-top:20px;margin-bottom:20px" id="create-home-page-components" readonly="">
+                    $ touch LoadingWrapper.js
+                    $ touch HomePage.js
+                    $ touch Contact.js
+                  </textarea>
+                </div>
+              </div>
+              <div class="grid-x grid-padding-x ">
+                <div class="cell  medium-12">
+                  <p>
+                    <span>Enter the following code into</span>
+                    <span style="color:#4b4b4b;font-style:italic">LoadingWrapper.js</span>
+                    <span>. This component will display a loading indicator while</span>
+                    <span style="color:#4b4b4b;font-style:italic">isLoading</span>
+                    <span> evaluates to true. Otherwise, it will render the component passed in via props.</span>
+                  </p>
+                </div>
+              </div>
+              <div class="grid-x grid-padding-x ">
+                <div class="cell  medium-12">
+                  <textarea style="margin-top:20px;margin-bottom:20px" id="loading-wrapper" readonly="">
+                    // LoadingWrapper.js
+                    import React from &#x27;react&#x27;;
+                    export const Loading = ({message = &#x27;Loading...&#x27;}) =&gt; &lt;h3&gt;{ message }&lt;/h3&gt;;
+                    export const LoadingWrapper = ({isLoading, children, message}) =&gt; {
+                    return isLoading ? &lt;Loading message={ message }/&gt; : children;
+                    };
+                  </textarea>
+                </div>
+              </div>
+              <div class="grid-x grid-padding-x ">
+                <div class="cell  medium-12">
+                  <p>
+                    <span>Enter the following into</span>
+                    <span style="color:#4b4b4b;font-style:italic">HomePage.js</span>
+                    <span>. This page will require authentication to view (aka</span>
+                    <span style="color:#4b4b4b;font-style:italic">PrivateRoute</span>
+                    <span>) and will simply display a string representation of the user for now. Our constructor
+                      initializes the component state object. When the component mounts, we call the fetchContacts()
+                      method, which will be populated shortly.
+                    </span>
+                  </p>
+                </div>
+              </div>
+              <div class="grid-x grid-padding-x ">
+                <div class="cell  medium-12">
+                  <textarea style="margin-top:20px;margin-bottom:20px" id="home-page" readonly="">
+                    // HomePage.js
+                    import React, {Component} from &#x27;react&#x27;;
+                    export default class HomePage extends Component {
+                    constructor(props) {
+                    super(props);
+                    this.state = {contacts: [], isLoadingContacts: false};
+                    }
+                    componentDidMount() {
+                    this.fetchContacts();
+                    }
+                    fetchContacts() {
+                    // we will populate this shortly
+                    }
+                    render() {
+                    const {user} = this.props;
+                    return (
+                    &lt;div&gt;
+                    &lt;h1&gt;Home Page&lt;/h1&gt;
+                    &lt;p&gt;{ user }&lt;/p&gt;
+                    &lt;/div&gt;
+                    );
+                    }
+                    }
+                  </textarea>
+                </div>
+              </div>
+              <div class="grid-x grid-padding-x ">
+                <div class="cell  medium-12">
+                  <p>
+                    <span>Now let&#x27;s display our contacts on the home page. Enter the following code into</span>
+                    <span style="color:#4b4b4b;font-style:italic">Contact.js</span>
+                    <span>. Our</span>
+                    <span style="color:#4b4b4b;font-style:italic">&lt;Contact /&gt;</span>
+                    <span> component will simply be a display of the name and email fields.</span>
+                  </p>
+                </div>
+              </div>
+              <div class="grid-x grid-padding-x ">
+                <div class="cell  medium-12">
+                  <textarea style="margin-top:20px;margin-bottom:20px" id="contact-component" readonly="">
+                    // Contact.js
+                    import React from &#x27;react&#x27;;
+                    export const Contact = ({contact}) =&gt; {
+                    return (
+                    &lt;div&gt;
+                    { [
+                    &#x27;Name:&#x27;, contact.first_name, contact.last_name, &#x27;|&#x27;,
+                    &#x27;Email&#x27;, contact.email
+                    ].join(&#x27; &#x27;) }
+                    &lt;/div&gt;
+                    );
+                    };
+                  </textarea>
+                </div>
+              </div>
+              <div class="grid-x grid-padding-x ">
+                <div class="cell  medium-12">
+                  <p>
+                    <span>Add the following to the</span>
+                    <span style="color:#4b4b4b;font-style:italic">fetchContacts()</span>
+                    <span> method in</span>
+                    <span style="color:#4b4b4b;font-style:italic">&lt;HomePage /&gt;</span>
+                    <span>. Here we set</span>
+                    <span style="color:#4b4b4b;font-style:italic">state.isLoadingContacts</span>
+                    <span> to true and make a GET request to the endpoint we set up in django. We set</span>
+                    <span style="color:#4b4b4b;font-style:italic">state.contacts</span>
+                    <span> from the response and</span>
+                    <span style="color:#4b4b4b;font-style:italic">state.isLoadingContacts</span>
+                    <span> to false.</span>
+                  </p>
+                </div>
+              </div>
+              <div class="grid-x grid-padding-x ">
+                <div class="cell  medium-12">
+                  <textarea style="margin-top:20px;margin-bottom:20px" id="fetch-contacts-method" readonly="">
+                    fetchContacts() {
+                    const url = &#x27;/api/v1/contacts/&#x27;;
+                    const options = {method: &#x27;GET&#x27;};
+                    const headers = {&#x27;Content-Type&#x27;: &#x27;application/json&#x27;};
+                    this.setState({isLoadingContacts: true});
+                    return fetch(url, {headers, ...options})
+                    .then(r =&gt; r.json())
+                    .then(contacts =&gt; {
+                    this.setState({contacts, isLoadingContacts: false});
+                    });
+                    }
+                  </textarea>
+                </div>
+              </div>
+              <div class="grid-x grid-padding-x ">
+                <div class="cell  medium-12">
+                  <p>
+                    <span>Add the following pieces to the render method to display our contacts. While</span>
+                    <span style="color:#4b4b4b;font-style:italic">state.isLoadingContacts</span>
+                    <span> is true, our</span>
+                    <span style="color:#4b4b4b;font-style:italic">&lt;LoadingWrapper/&gt;</span>
+                    <span> will display a loading indicator. After we receive the response, the</span>
+                    <span style="color:#4b4b4b;font-style:italic">&lt;Contact /&gt;</span>
+                    <span> list will be rendered. Don&#x27;t forget to add the imports.</span>
+                    <span style="color:#4b4b4b;font-style:italic">&lt;HomePage /&gt;</span>
+                    <span> should look like</span>
+                    <a href="https://github.com/mikejuliano/contact-manager-web/blob/master/src/HomePage.js"
+                       target="_blank">this</a>
+                    <span> when complete.</span>
+                  </p>
+                </div>
+              </div>
+              <div class="grid-x grid-padding-x ">
+                <div class="cell  medium-12">
+                  <textarea style="margin-top:20px;margin-bottom:20px" id="final-home-page-render-method" readonly="">
+                    import React, {Component} from &#x27;react&#x27;;
+                    import {Contact} from &#x27;./Contact&#x27;;
+                    import {LoadingWrapper} from &#x27;./LoadingWrapper&#x27;;
+                    //...
+                    render() {
+                    const {user} = this.props;
+                    return (
+                    &lt;div&gt;
+                    &lt;div&gt;
+                    &lt;h1&gt;Home Page&lt;/h1&gt;
+                    &lt;p&gt;{ user }&lt;/p&gt;
+                    &lt;/div&gt;
+                    &lt;div&gt;
+                    &lt;h3&gt;Contacts&lt;/h3&gt;
+                    &lt;LoadingWrapper
+                    isLoading={ this.state.isLoadingContacts }
+                    message={ &#x27;Loading Contacts...&#x27; }&gt;
+                    {
+                    this.state.contacts.map((contact, index) =&gt; (
+                    &lt;Contact
+                    key={ index }
+                    contact={ contact }
+                    /&gt;
+                    ))
+                    }
+                    &lt;/LoadingWrapper&gt;
+                    &lt;/div&gt;
+                    &lt;/div&gt;
+                    );
+                    }
+                  </textarea>
+                </div>
+              </div>
+              <div class="grid-x grid-padding-x ">
+                <div class="cell  medium-12">
+                  <div class="blog-image-wrapper">
+                    <span>
+                      <img src="https://res.cloudinary.com/dmh4ucizb/image/upload/v1525962051/auth-tutorial-01/25-home-page-with-contacts.png"
+                           style="styles:[object Object]"
+                           alt=""/>
+                    </span>
+                  </div>
+                </div>
+              </div>
+              <div class="grid-x grid-padding-x ">
+                <div class="cell  medium-12">
+                  <span style="text-align:left"><h3 id="h3-login-page">Login Page</h3></span>
+                </div>
+              </div>
+              <div class="grid-x grid-padding-x ">
+                <div class="cell  medium-12">
+                  <textarea style="margin-top:20px;margin-bottom:20px" id="create-login-page-components" readonly="">
+                    $ touch LogoutButton.js
+                    $ touch LoginPage.js
+                    $ touch Login.css
+                  </textarea>
+                </div>
+              </div>
+              <div class="grid-x grid-padding-x ">
+                <div class="cell  medium-12">
+                  <p>
+                    <span>Enter the following code into</span>
+                    <span style="color:#4b4b4b;font-style:italic">LogoutButton.js</span>
+                    <span>. This is another conditional component that will show a logout button when authenticated. If
+                      not authenticated, a message will be displayed.
+                    </span>
+                  </p>
+                </div>
+              </div>
+              <div class="grid-x grid-padding-x ">
+                <div class="cell  medium-12">
+                  <textarea style="margin-top:20px;margin-bottom:20px" id="logout-button" readonly="">
+                    // LogoutButton.js
+                    import React from &#x27;react&#x27;;
+                    import {withRouter} from &quot;react-router-dom&quot;;
+                    export const LogoutButton = withRouter(({history, ...rest}) =&gt; {
+                    const {isAuthenticated, handleLogout} = rest;
+                    return isAuthenticated
+                    ? (
+                    &lt;p&gt;
+                    &lt;button
+                    type=&quot;button&quot;
+                    className=&quot;form-submit&quot;
+                    onClick={ () =&gt; handleLogout(history) }&gt;Logout
+                    &lt;/button&gt;
+                    &lt;/p&gt;
+                    )
+                    : &lt;p&gt;You are not logged in&lt;/p&gt;;
+                    }
+                    );
+                  </textarea>
+                </div>
+              </div>
+              <div class="grid-x grid-padding-x ">
+                <div class="cell  medium-12">
+                  <p>
+                    <span>Enter the following into</span>
+                    <span style="color:#4b4b4b;font-style:italic">LoginPage.js</span>
+                    <span>. This page will not require authentication (aka</span>
+                    <span style="color:#4b4b4b;font-style:italic">PublicRoute</span>
+                    <span>). The page contains a login form that calls</span>
+                    <span style="color:#4b4b4b;font-style:italic">this.props.attemptLogin</span>
+                    <span> on submit (</span>
+                    <span style="color:#4b4b4b;font-style:italic">attemptLogin</span>
+                    <span> is implemented in</span>
+                    <span style="color:#4b4b4b;font-style:italic">App.js</span>
+                    <span>).</span>
+                  </p>
+                </div>
+              </div>
+              <div class="grid-x grid-padding-x ">
+                <div class="cell  medium-12">
+                  <textarea style="margin-top:20px;margin-bottom:20px" id="login-page" readonly="">
+                    // LoginPage.js
+                    import React, {Component} from &#x27;react&#x27;;
+                    import &#x27;./Login.css&#x27;;
+                    export default class LoginPage extends Component {
+                    constructor(props) {
+                    super(props);
+                    const {handlers} = props;
+                    const {attemptLogin} = handlers;
+                    this.handleChange = this.handleChange.bind(this);
+                    this.attemptLogin = attemptLogin.bind(this);
+                    }
+                    handleChange(e) {
+                    this.setState({[e.target.name]: e.target.value});
+                    }
+                    submit(e) {
+                    e.preventDefault();
+                    return this.attemptLogin(this.state.username, this.state.password);
+                    }
+                    render() {
+                    return (
+                    &lt;div className=&quot;center&quot;&gt;
+                    &lt;div className=&quot;card&quot;&gt;
+                    &lt;h1&gt;Login Page&lt;/h1&gt;
+                    &lt;form&gt;
+                    &lt;input
+                    className=&quot;form-item&quot;
+                    placeholder=&quot;Username goes here...&quot;
+                    name=&quot;username&quot;
+                    type=&quot;text&quot;
+                    onChange={ this.handleChange }
+                    /&gt;
+                    &lt;input
+                    className=&quot;form-item&quot;
+                    placeholder=&quot;Password goes here...&quot;
+                    name=&quot;password&quot;
+                    type=&quot;password&quot;
+                    onChange={ this.handleChange }
+                    /&gt;
+                    &lt;button
+                    className=&quot;form-submit&quot;
+                    value=&quot;SUBMIT&quot;
+                    type=&quot;button&quot;
+                    onClick={ (event) =&gt; this.submit(event) }&gt;Login
+                    &lt;/button&gt;
+                    &lt;/form&gt;
+                    &lt;/div&gt;
+                    &lt;/div&gt;
+                    );
+                    }
+                    }
+                  </textarea>
+                </div>
+              </div>
+              <div class="grid-x grid-padding-x ">
+                <div class="cell  medium-12">
+                  <p>
+                    <span>Add</span>
+                    <a href="https://github.com/mikejuliano/contact-manager-web/blob/master/src/Login.css"
+                       target="_blank">these styles</a>
+                    <span> into</span>
+                    <span style="color:#4b4b4b;font-style:italic">Login.css</span>
+                    <span></span>
+                  </p>
+                </div>
+              </div>
+              <div class="grid-x grid-padding-x ">
+                <div class="cell  medium-12">
+                  <span style="text-align:left"><h3 id="h3-services">Services</h3></span>
+                </div>
+              </div>
+              <div class="grid-x grid-padding-x ">
+                <div class="cell  medium-12">
+                  <textarea style="margin-top:20px;margin-bottom:20px" id="create-services" readonly="">
+                    $ touch AuthService.js
+                    $ touch StorageService.js
+                  </textarea>
+                </div>
+              </div>
+              <div class="grid-x grid-padding-x ">
+                <div class="cell  medium-12">
+                  <p>
+                    <span>Enter the following into</span>
+                    <span style="color:#4b4b4b;font-style:italic">StorageService.js</span>
+                    <span>. This is a wrapper class for the browsers default localStorage. Each method is implemented
+                      asynchronously. By setting it up this way early in our app, we are not tied to synchronous
+                      methods. In addition, when we implement this tutorial in
+                    </span>
+                    <a href="https://facebook.github.io/react-native/" target="_blank">React Native</a>
+                    <span> (coming soon), the transition will go more smoothly (localStorage in</span>
+                    <a href="https://facebook.github.io/react-native/" target="_blank">React Native</a>
+                    <span> is only offered asynchronously).</span>
+                  </p>
+                </div>
+              </div>
+              <div class="grid-x grid-padding-x ">
+                <div class="cell  medium-12">
+                  <textarea style="margin-top:20px;margin-bottom:20px" id="storage-service" readonly="">
+                    // StorageService.js
+                    export default class StorageService {
+                    getItem(key) {
+                    return Promise.resolve(localStorage.getItem(key));
+                    }
+                    setItem(key, value) {
+                    localStorage.setItem(key, value);
+                    return Promise.resolve(value);
+                    }
+                    removeItem(key) {
+                    localStorage.removeItem(key);
+                    return Promise.resolve(true);
+                    }
+                    }
+                  </textarea>
+                </div>
+              </div>
+              <div class="grid-x grid-padding-x ">
+                <div class="cell  medium-12">
+                  <p>
+                    <span>The full content of</span>
+                    <a href="https://github.com/mikejuliano/contact-manager-web/blob/master/src/AuthService.js"
+                       target="_blank">AuthService.js</a>
+                    <span>, can be found</span>
+                    <a href="https://github.com/mikejuliano/contact-manager-web/blob/master/src/AuthService.js"
+                       target="_blank">here</a>
+                    <span>. Take note of the</span>
+                    <span style="color:#4b4b4b;font-style:italic">authenticate</span>
+                    <span> and</span>
+                    <span style="color:#4b4b4b;font-style:italic">getUser</span>
+                    <span> methods. The</span>
+                    <span style="color:#4b4b4b;font-style:italic">authenticate</span>
+                    <span> method calls the url we set up in django</span>
+                    <span style="color:#4b4b4b;font-style:italic">(/api-token-auth)</span>
+                    <span>, then checks for a valid response. If the response is valid, a token will be returned. We set
+                      the token in local storage. The existence of the token in local storage is how we determine that
+                      the user is authenticated throughout the app. Finally, we return a string representation of the
+                      user (which is crudely the user&#x27;s name and the token, but I think it will suffice for the
+                      purposes of this tutorial).
+                    </span>
+                  </p>
+                </div>
+              </div>
+              <div class="grid-x grid-padding-x ">
+                <div class="cell  medium-12">
+                  <textarea style="margin-top:20px;margin-bottom:20px" id="auth-service-authenticate" readonly="">
+                    // this is a snippet from
+                    https://github.com/mikejuliano/contact-manager-web/blob/master/src/AuthService.js
+                    authenticate(username, password) {
+                    const url = &#x27;/api-token-auth/&#x27;;
+                    const options = {
+                    method: &#x27;POST&#x27;,
+                    body: JSON.stringify({username, password}),
+                    };
+                    return this.getTokenAsync()
+                    .then(token =&gt; {
+                    const headers = this.getHeaders(token, this.isAuthenticated);
+                    return fetch(url, {headers, ...options}); // allows for headers override by spreading
+                    })
+                    .then(this.checkStatus) // raises an error in case response status is not a success
+                    .then(response =&gt; response.json())
+                    .then(response =&gt; {
+                    const token = response ? response.token : null;
+                    this.setTokenAsync(token);
+                    this.isAuthenticated = !!token;
+                    return this.getUser(token);
+                    });
+                    }
+                  </textarea>
+                </div>
+              </div>
+              <div class="grid-x grid-padding-x ">
+                <div class="cell  medium-12">
+                  <textarea style="margin-top:20px;margin-bottom:20px" id="auth-service-get-user" readonly="">
+                    // this is a snippet from
+                    https://github.com/mikejuliano/contact-manager-web/blob/master/src/AuthService.js
+                    getUser(token) {
+                    return Promise.resolve(token ? `Hello Mike ${token}` : null);
+                    }
+                  </textarea>
+                </div>
+              </div>
+              <div class="grid-x grid-padding-x ">
+                <div class="cell  medium-12">
+                  <span style="text-align:left"><h3 id="h3-putting-it-all-together">Putting it all together</h3></span>
+                </div>
+              </div>
+              <div class="grid-x grid-padding-x ">
+                <div class="cell  medium-12">
+                  <p>
+                    <span>We can see all of the components and services working together in</span>
+                    <a href="https://github.com/mikejuliano/contact-manager-web/blob/master/src/App.js" target="_blank">App.js</a>
+                    <span>. In the constructor, we first build an instance of</span>
+                    <span style="color:#4b4b4b;font-style:italic">AuthService</span>
+                    <span> which takes</span>
+                    <span style="color:#4b4b4b;font-style:italic">StorageService</span>
+                    <span> as a parameter. We initialize our state with</span>
+                    <span style="color:#4b4b4b;font-style:italic">hasLoaded</span>
+                    <span>,</span>
+                    <span style="color:#4b4b4b;font-style:italic">user</span>
+                    <span>, and</span>
+                    <span style="color:#4b4b4b;font-style:italic">isAuthenticated</span>
+                    <span>. Finally, we call the init method which checks for a token in local storage and returns the
+                      user if it exists.
+                    </span>
+                  </p>
+                </div>
+              </div>
+              <div class="grid-x grid-padding-x ">
+                <div class="cell  medium-12">
+                  <textarea style="margin-top:20px;margin-bottom:20px" id="app-js-init" readonly="">
+                    // snippet from App.js
+                    constructor() {
+                    super();
+                    // AuthService requires an instance of StorageService
+                    // we create AuthService here so that there is only one copy throughout the app
+                    this.authService = new AuthService({storageService: new StorageService()});
+                    // initialize our state object
+                    this.state = {hasLoaded: false, user: null, isAuthenticated: false};
+                    // kick off asynchronous initialization
+                    this.init();
+                    }
+                    init() {
+                    this.authService.init() // check for token and fetch user if token exists
+                    .then(user =&gt; this.setUser(user));
+                    }
+                  </textarea>
+                </div>
+              </div>
+              <div class="grid-x grid-padding-x ">
+                <div class="cell  medium-12">
+                  <p>
+                    <span>Inside the render method... The</span>
+                    <span style="color:#4b4b4b;font-style:italic">LoadingWrapper</span>
+                    <span> component will display a &quot;Loading...&quot; indicator until</span>
+                    <span style="color:#4b4b4b;font-style:italic">state.hasLoaded</span>
+                    <span> evaluates to true. We wrap our route components inside a</span>
+                    <span style="color:#4b4b4b;font-style:italic">&lt;Router&gt;...&lt;/Router&gt;</span>
+                    <span>. We can also see our route components at work here. The</span>
+                    <span style="color:#4b4b4b;font-style:italic">LoginPage</span>
+                    <span> is set up as a</span>
+                    <span style="color:#4b4b4b;font-style:italic">PublicRoute</span>
+                    <span>. The</span>
+                    <span style="color:#4b4b4b;font-style:italic">HomePage</span>
+                    <span> is set up as a</span>
+                    <span style="color:#4b4b4b;font-style:italic">PrivateRoute</span>
+                    <span>.</span>
+                  </p>
+                </div>
+              </div>
+              <div class="grid-x grid-padding-x ">
+                <div class="cell  medium-12">
+                  <textarea style="margin-top:20px;margin-bottom:20px" id="app-js-render" readonly="">
+                    // snippet from App.js
+                    render() {
+                    return (
+                    &lt;LoadingWrapper isLoading={ !this.state.hasLoaded }&gt;
+                    &lt;div className=&quot;App&quot;&gt;
+                    &lt;Router&gt;
+                    &lt;div&gt;
+                    &lt;LogoutButton
+                    isAuthenticated={ this.state.isAuthenticated }
+                    handleLogout={ this.logout.bind(this) }
+                    /&gt;
+                    &lt;PrivateRoute
+                    path=&quot;/home&quot;
+                    exact={ true }
+                    component={ HomePage }
+                    isAuthenticated={ this.state.isAuthenticated }
+                    user={ this.state.user }
+                    /&gt;
+                    &lt;PublicRoute
+                    path=&quot;/login&quot;
+                    exact={ true }
+                    component={ LoginPage }
+                    handlers={ {
+                    attemptLogin: this.attemptLogin.bind(this)
+                    } }
+                    /&gt;
+                    &lt;/div&gt;
+                    &lt;/Router&gt;
+                    &lt;/div&gt;
+                    &lt;/LoadingWrapper&gt;
+                    )
+                    }
+                  </textarea>
+                </div>
+              </div>
+              <div class="grid-x grid-padding-x ">
+                <div class="cell  medium-12">
+                  <div class="blog-image-wrapper">
+                    <span>
+                      <img src="https://res.cloudinary.com/dmh4ucizb/image/upload/v1525715657/auth-tutorial-01/23-login-page.png"
+                           style="styles:[object Object]"
+                           alt=""/>
+                    </span>
+                  </div>
+                </div>
+              </div>
+              <div class="grid-x grid-padding-x ">
+                <div class="cell  medium-12">
+                  <p>
+                    <span>Our login method calls the authenticate method with the username and password from the form.
+                      If it&#x27;s a valid username/password combination, we set the user, then navigate to the
+                    </span>
+                    <span style="color:#4b4b4b;font-style:italic">HomePage</span>
+                    <span>.</span>
+                  </p>
+                </div>
+              </div>
+              <div class="grid-x grid-padding-x ">
+                <div class="cell  medium-12">
+                  <p>
+                    <span></span>
+                    <span>TODO: Network Response?</span>
+                    <span></span>
+                  </p>
+                </div>
+              </div>
+              <div class="grid-x grid-padding-x ">
+                <div class="cell  medium-12">
+                  <textarea style="margin-top:20px;margin-bottom:20px" id="app-js-attempt-login" readonly="">
+                    // snippet from App.js
+                    attemptLogin(username, password) { // authenticate, set the user, navigate to home page
+                    return this.authService.authenticate(username, password)
+                    .then(user =&gt; this.setUser(user, () =&gt; this.goHome()))
+                    .catch(err =&gt; console.error(err));
+                    }
+                  </textarea>
+                </div>
+              </div>
+              <div class="grid-x grid-padding-x ">
+                <div class="cell  medium-12">
+                  <p>
+                    <span>On the</span>
+                    <span style="color:#4b4b4b;font-style:italic">HomePage</span>
+                    <span>, we are presented with a</span>
+                    <span style="color:#4b4b4b;font-style:italic">LogoutButton</span>
+                    <span> (because we are authenticated) and a string representation of the user.</span>
+                  </p>
+                </div>
+              </div>
+              <div class="grid-x grid-padding-x ">
+                <div class="cell  medium-12">
+                  <div class="blog-image-wrapper">
+                    <span>
+                      <img src="https://res.cloudinary.com/dmh4ucizb/image/upload/v1525715657/auth-tutorial-01/24-home-page.png"
+                           style="styles:[object Object]"
+                           alt=""/>
+                    </span>
+                  </div>
+                </div>
+              </div>
+              <div class="grid-x grid-padding-x ">
+                <div class="cell  medium-12">
+                  <p>
+                    <span>When the user clicks</span>
+                    <span style="color:#4b4b4b;font-style:italic">Logout</span>
+                    <span>, we remove the token from localStorage and redirect to</span>
+                    <span style="color:#4b4b4b;font-style:italic">LoginPage</span>
+                    <span>.</span>
+                  </p>
+                </div>
+              </div>
+              <div class="grid-x grid-padding-x ">
+                <div class="cell  medium-12">
+                  <textarea style="margin-top:20px;margin-bottom:20px" id="app-js-logout" readonly="">
+                    // snippet from App.js
+                    logout(history) {
+                    this.authService.logout(); // remove token from localStorage
+                    this.setUser(null, () =&gt; this.goToLogin(history)); // clear the user, then navigate to login page
+                    }
+                  </textarea>
+                </div>
+              </div>
+            </section>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,12 @@
+import React from 'react';
+import {DEMO_HOME, DEMO_ROUTES} from './demoRoutes';
+import {DemoApp} from '@jsaundersdev/react-common';
+
+export const PaywallDemoApp = (props) => {
+  const {} = props;
+  return (
+    <DemoApp path={ DEMO_HOME } routes={ DEMO_ROUTES }/>
+  );
+};
+
+PaywallDemoApp.propTypes = {};

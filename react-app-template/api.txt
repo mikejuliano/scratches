@@ -1,0 +1,34 @@
+export const API_TOKEN = 'Bearer 59f6321e16206dd0f5dbb85fc16c84bd1ca36019';
+
+const envs = {
+  production: {
+    host: 'http://blog.jsaundersdev.com', //TODO
+    token: 'f2f9f0211389457682366af1e5daa201e17479d0' //TODO
+  },
+  stage: {
+    host: 'http://blog.jsaundersdev.com', //TODO
+    token: 'f2f9f0211389457682366af1e5daa201e17479d0' //TODO
+  },
+  development: {
+    host: '',
+    token: 'Bearer 59f6321e16206dd0f5dbb85fc16c84bd1ca36019'
+  },
+};
+
+const activeEnv = process.env.REACT_APP_ENV;
+console.log('activeEnv', activeEnv);
+
+export const getHost = () => {
+  const env = envs[activeEnv];
+  return env ? env.host : '';
+};
+
+export const apiRoot = (version = 'v1') => {
+  const host = getHost();
+  return `${host}/api/${version}`;
+};
+
+export const getToken = () => {
+  const env = envs[activeEnv];
+  return env ? env.token : '';
+};

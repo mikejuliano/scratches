@@ -1,0 +1,3 @@
+Where should translationService.initialize() get called from? https://github.com/TheLaundryChute/libs/blob/c75dcd99754e8502277c20d653b17cde6fac4fe5/src/obsolete/message.ts#L10
+
+Message.Recipients.Type in TLC is a string, which is going to prevent us from using @inmotion/messaging/MessageService.  What should we do about that?

@@ -1,0 +1,4 @@
+ssh-keygen
+ssh-copy-id webserver
+
+ansible --list-hosts all

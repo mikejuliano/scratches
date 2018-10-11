@@ -1,0 +1,67 @@
+create repo on gitlab
+create-react-app website-components
+cd website-components
+add .gitignore (starting point in scratches)
+add .npmrc (starting point in scratches)
+package.json configure port in start script... "start": "PORT=3102 react-scripts start",
+record port in ports.txt
+package.json configure proxy... "proxy": "http://localhost:8000/api",
+//----------------------------------------------------------------------------------------------------------------------
+REPOSITORY
+
+git init
+git remote add origin https://gitlab.com/jsaunders-solutions/react-website-components.git
+git add .
+git commit -m "Initial commit"
+git push -u origin master
+//----------------------------------------------------------------------------------------------------------------------
+DEPENDENCIES
+yarn add lodash foundation foundation-sites react-router react-router-dom font-awesome
+yarn add redux redux-thunk react-redux
+"@jsaundersdev/react-common": "0.1.29",
+
+//----------------------------------------------------------------------------------------------------------------------
+CREATE DIRECTORIES
+
+mkdir src/demo
+touch src/demo/demoRoutes.js
+touch src/demo/WebsiteDemoApp.js
+
+mkdir src/config
+touch src/config/api.js
+touch src/config/settings.js
+
+mkdir src/modules
+mkdir src/modules/sample
+mkdir src/modules/sample/components
+mkdir src/modules/sample/demo
+mkdir src/modules/sample/state
+touch src/modules/sample/utils.js
+
+git add src
+
+//----------------------------------------------------------------------------------------------------------------------
+IMPORTS
+
+add imports to index.js
+import 'foundation-sites/dist/css/foundation.css';
+import 'font-awesome/css/font-awesome.min.css';
+
+add common imports to App.js
+import {BrowserRouter as Router} from 'react-router-dom';
+import '@jsaundersdev/react-common/lib/styles/Common.css';
+import {
+  AppHeader, connectedContainer, LoadingWrapper, RenderIfNotFalsey, RouteConfig, RoutesBuilder
+} from '@jsaundersdev/react-common';
+
+//----------------------------------------------------------------------------------------------------------------------
+yarn start
+//----------------------------------------------------------------------------------------------------------------------
+populate src/config/api.js (template: scratches/react-app-template/api.txt)
+replace app element (template in scratches/react-app-template/app-element.txt)
+populate demoRoutes.js
+populate WebsiteDemoApp.js
+
+//----------------------------------------------------------------------------------------------------------------------
+add auth module
+add redux

@@ -1,0 +1,25 @@
+server {
+    listen       80;
+    server_name  admin.local.net;
+
+    include "../../../global.conf";
+
+	  location /static {
+         #root   "../../../../../engine/src/apps/admin/web/dist";
+         #root   "../../../../../../the-dev-shop/the-dev-shop/engine/src/apps/admin/web/dist";
+         #root   "/Documents/github/the-dev-shop/the-dev-shop/engine/src/apps/admin/web/dist";
+         #root   "/Users/mjuliano/Documents/github/the-dev-shop/the-dev-shop/engine/src/apps/admin/web/dist";
+         root   "~/Documents/github/the-dev-shop/the-dev-shop/engine/src/apps/admin/web/dist";
+    }
+
+    location / {
+      location ~ \.tpl.html$ {
+        deny all;
+      }
+        #root "../../../../../engine/src/apps/admin/web/dist";
+        #root "../../../../../../the-dev-shop/the-dev-shop/engine/src/apps/admin/web/dist";
+        #root   "/Documents/github/the-dev-shop/the-dev-shop/engine/src/apps/admin/web/dist";
+        root   "/Users/mjuliano/Documents/github/the-dev-shop/the-dev-shop/engine/src/apps/admin/web/dist";
+        try_files $uri $uri/ /index.html;
+      }
+}

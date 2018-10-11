@@ -1,0 +1,62 @@
+<LoadingWrapper isLoading={ this.props.isLoadingUser || !this.props.hasLoadedUser }>
+        <div className="App">
+          <AppHeader title={ 'MY APP TITLE' }>
+            <a href={ '/demo/' }>Demo</a>
+          </AppHeader>
+          <Router>
+            <div>
+              <WebsiteDemoApp/>
+                // auth button
+                // routes builder
+            </div>
+          </Router>
+        </div>
+      </LoadingWrapper>
+
+
+
+
+//----------------------------------------------------------------------------------------------------------------------
+
+// AUTH BUTTON
+<RenderIfNotFalsey item={ AuthActionCreators }>
+  <AuthButton
+    isAuthenticated={ this.props.isAuthenticated }
+    applyAction={ this.applyAction }
+    loginPath={ ROUTES.login }
+    authActionCreators={ AuthActionCreators }
+  />
+</RenderIfNotFalsey>
+
+
+
+
+
+
+// ROUTES BUILDER
+<RoutesBuilder
+    isAuthenticated={ this.props.isAuthenticated }
+    routes={ [
+      RouteConfig._redirect({from: '/', to: ROUTES.home}),
+      // login
+      RouteConfig._public({
+        path: ROUTES.login,
+        component: LoginPageContainer,
+        props: {
+          homePath: ROUTES.home,
+          applyAction: this.applyAction,
+          authActionCreators: AuthActionCreators
+        }
+      }),
+      // checkout
+      RouteConfig._private({
+        path: '/checkout/:step/:productId?/:planId?/:subscriptionId?',
+        component: DynamicCheckoutContainer,
+        props: {stripeSettings: STRIPE_SETTINGS}
+      }),
+    ] }
+  />
+
+
+
+

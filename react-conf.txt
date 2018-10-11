@@ -1,0 +1,38 @@
+CPU DEMO
+    "Time Slicing"
+    (version control analogy)
+
+IO DEMO
+    "Suspense"
+
+    <Placeholder delayMs={1500} fallback={<Spinner/>}
+        <MoviePage/>
+    </Placeholder>
+
+    Placeholder is comparable to <LoadingSpinner />
+
+    <Loading>
+
+    // dynamic import syntax
+    const moviePageFetcher = createFetcher(
+        () => import('./MoviePage')
+    );
+    const moviePage = moviePageFetcher.read().default;
+
+
+
+Async Rendering
+
+
+
+
+
+
+Time Slicing
+- i really like the ability to distinguish between low and high priority updates to state
+
+
+UX improvements
+    Keeping the screen interactive when loading (go back to previous page before data loads)
+    Convenient way to cache calls with createFetcher
+

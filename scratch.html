@@ -1,0 +1,28 @@
+<div class="body-blur custom-form">
+  <form (submit)="submitEmail($event, email.value)">
+    <h3>{{ title }}</h3>
+    <div class="form-group">
+      <div class="input-group">
+        <span class="input-group-addon"><i class="fa fa-envelope"></i></span>
+        <input
+          class="form-control"
+          type="email"
+          name="email"
+          [disabled]="false"
+          #email
+          id="email"
+          required
+          placeholder="Email Address"
+        />
+      </div>
+    </div>
+    <button
+      type="submit"
+      [disabled]="!email"
+      class="btn btn-primary">Send Reset Info
+    </button>
+    <p>
+      <a [href]="loginUrl">{{ returnToLoginText }}</a>
+    </p>
+  </form>
+</div>

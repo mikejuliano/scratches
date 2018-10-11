@@ -1,0 +1,139 @@
+LocationConfiguration
+    - IsExpressEnabled only
+
+ScheduleType
+
+export class ScheduleTargetMeta {
+  LocationName:string;
+  LocationId:string;
+  ClientId:string;
+}
+
+export class ScheduleTarget {
+  Item:SimpleInstance;
+  Meta:ScheduleTargetMeta;
+}
+
+export class ScheduleConfiguration {
+  BlackoutHours:number;
+  AdvanceSchedulingDays:number;
+}
+
+export class Schedule extends BaseInmotionObject {
+  Id:string;
+  Types:ScheduleType[];
+  HoursOfOperation:HoursOfOperation[];
+  SpecialDays:SpecialDay[];
+  AppliesTo:ScheduleTarget[];
+  Configuration:ScheduleConfiguration;
+}
+
+export class Unit extends BaseInmotionObject {  // or Bin if we want to retain that name
+  public Id:string;
+  public Name:string;
+  public Location:SimpleInstance<Location>;
+  public LocationId:string; // to match against UsedScheduleSlot instances
+  public LocationAddress:string;
+
+  public UnitName?:string; // TODO remove after data cleanup
+  public UnitId?:string; // TODO remove after data cleanup
+
+  public Status:UnitStatus;
+  // public ScheduleId: string;  //NOTE This is a TLC concept.  Not needed for now.  This maps a locker to a schedule for availability
+  public Lockers:Array<Locker>;
+
+  public MaxHeight:number;
+  public MaxWidth:number;
+  public IsExpresssEnabled:boolean;
+  public MaxCapacity:number;
+  public PickupCapacity:number;
+}
+
+
+{
+  "__i": {
+    "guid": null,
+    "model": null,
+    "tags": [],
+    "auditing": null
+  },
+  "Id": "1001",
+  "Types": [
+    {
+      "Name": "DROP_OFF",
+      "Label": "Drop Off"
+    },
+    {
+      "Name": "BAG_PICKUP",
+      "Label": "Bag Pick Up"
+    }
+  ],
+  "HoursOfOperation": [
+    {
+      "Days": [
+        {
+          "Label": "Monday",
+          "Abbreviation": "Mon"
+        },
+        {
+          "Label": "Tuesday",
+          "Abbreviation": "Tue"
+        },
+        {
+          "Label": "Wednesday",
+          "Abbreviation": "Wed"
+        },
+        {
+          "Label": "Friday",
+          "Abbreviation": "Fri"
+        },
+        {
+          "Label": "Thursday",
+          "Abbreviation": "Thurs"
+        },
+        {
+          "Label": "Saturday",
+          "Abbreviation": "Sat"
+        },
+        {
+          "Label": "Sunday",
+          "Abbreviation": "Sun"
+        }
+      ],
+      "Label": "S-S",
+      "StartTime": "00:00:00",
+      "EndTime": "23:59:59",
+      "Id": "1001"
+    }
+  ],
+  "SpecialDays": [],
+  "AppliesTo": [
+    {
+      "Item": {
+        "Id": "08cd78ce-44f3-425d-9e49-b32166ec08ed",
+        "Display": "Johnson Hall - test",
+        "Model": "Location"
+      },
+      "Meta": {
+        "LocationName": "Johnson Hall - test",
+        "LocationId": "1000",
+        "ClientId": "1"
+      }
+    }
+  ],
+  "Configuration": {
+    "BlackoutHours": 4,
+    "AdvanceSchedulingDays": 2
+  }
+}
+
+
+
+{
+  "uri": "http://api-test.thedevshop.app/v1/e/api/Location?size=200&q=%7B%22Payload.Schedules%22%3A%7B%22%24exists%22%3Atrue%2C%22%24not%22%3A%7B%22%24size%22%3A0%7D%7D%7D",
+  "headers": {
+    "Authorization": "VdAViw0grkavqHSMeGtp9A==GOPiaVfvCkK34R5FctAmhg=="
+  },
+  "data": null,
+  "method": "GET"
+}

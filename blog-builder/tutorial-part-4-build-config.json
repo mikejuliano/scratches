@@ -1,0 +1,1074 @@
+{
+  "style": {
+    "containerPadding": 10,
+    "codeBlock": {
+      "height": "800px",
+      "width": "100%",
+      "wrapEnabled": false,
+      "useTextArea": false,
+      "hasAutoComplete": true,
+      "enableSnippets": false,
+      "maxLines": 200,
+      "tabSize": 2,
+      "showLineNumbers": false
+    }
+  },
+  "sections": [
+    {
+      "isSelected": true,
+      "isActive": true,
+      "key": 5,
+      "elements": [
+        {
+          "isSelected": false,
+          "isActive": true,
+          "text": "Create React App",
+          "size": 2,
+          "linksTo": null,
+          "key": 121,
+          "isExpanded": false,
+          "type": "HEADLINE"
+        },
+        {
+          "isSelected": false,
+          "isActive": true,
+          "text": "Navigate to your tutorial directory and create a new react app.",
+          "textConfigs": [],
+          "key": 122,
+          "isExpanded": false,
+          "type": "TEXT"
+        },
+        {
+          "isSelected": false,
+          "isActive": true,
+          "type": "CODE_BLOCK",
+          "id": "create-react-app-web",
+          "showLineNumbers": false,
+          "codeValue": "\n$ create-react-app web\n",
+          "language": "bash",
+          "key": 123,
+          "showGutter": true,
+          "isExpanded": false
+        },
+        {
+          "isSelected": false,
+          "isActive": true,
+          "text": "We will need to install react's router.",
+          "textConfigs": [],
+          "key": 124,
+          "isExpanded": false,
+          "type": "TEXT"
+        },
+        {
+          "isSelected": false,
+          "isActive": true,
+          "text": "{{0}}",
+          "textConfigs": [
+            {
+              "stylePreset": "todo",
+              "display": "TODO: We are using yarn because...",
+              "key": 50,
+              "id": 0,
+              "styles": "todo"
+            }
+          ],
+          "key": 125,
+          "isExpanded": false,
+          "type": "TEXT"
+        },
+        {
+          "isSelected": false,
+          "isActive": true,
+          "type": "CODE_BLOCK",
+          "id": "yarn-add-react-router-dom",
+          "showLineNumbers": false,
+          "codeValue": "\n$ yarn add react-router-dom\n",
+          "language": "bash",
+          "key": 126,
+          "showGutter": true,
+          "isExpanded": false
+        },
+        {
+          "isSelected": false,
+          "isActive": true,
+          "text": "Open package.json and add the proxy line.  This will direct any requests from http://localhost:3000 (where our react app is running) to http://localhost:8000 (where our django server is running).",
+          "textConfigs": [],
+          "key": 127,
+          "isExpanded": false,
+          "type": "TEXT"
+        },
+        {
+          "isSelected": false,
+          "isActive": true,
+          "url": "https://res.cloudinary.com/dmh4ucizb/image/upload/v1524698256/auth-tutorial-01/21-proxy.png",
+          "type": "IMAGE",
+          "maxWidth": "400px",
+          "key": 128,
+          "isExpanded": false
+        },
+        {
+          "isSelected": false,
+          "isActive": true,
+          "text": "Start the app.",
+          "textConfigs": [],
+          "key": 129,
+          "isExpanded": false,
+          "type": "TEXT"
+        },
+        {
+          "isSelected": false,
+          "isActive": true,
+          "type": "CODE_BLOCK",
+          "id": "yarn-start",
+          "showLineNumbers": false,
+          "codeValue": "\n$ yarn start\n",
+          "language": "bash",
+          "key": 130,
+          "showGutter": true,
+          "isExpanded": false
+        },
+        {
+          "isSelected": false,
+          "isActive": true,
+          "text": "I usually keep one terminal open with the running application and another open at the src directory...",
+          "textConfigs": [],
+          "key": 131,
+          "isExpanded": false,
+          "type": "TEXT"
+        },
+        {
+          "isSelected": false,
+          "isActive": true,
+          "url": "https://res.cloudinary.com/dmh4ucizb/image/upload/v1524698256/auth-tutorial-01/22-iterm.png",
+          "type": "IMAGE",
+          "key": 132,
+          "isExpanded": false
+        },
+        {
+          "isSelected": false,
+          "isActive": true,
+          "text": "The source for what we'll be building can be found {{0}}.  We'll be walking through each piece individually, but feel free to use this as a starting point for your app if you wish.",
+          "textConfigs": [
+            {
+              "stylePreset": null,
+              "display": "here",
+              "linksTo": "https://github.com/mikejuliano/contact-manager-web/blob/master/src/",
+              "key": 51
+            }
+          ],
+          "key": 133,
+          "isExpanded": false,
+          "type": "TEXT"
+        },
+        {
+          "isSelected": false,
+          "isActive": true,
+          "key": 134,
+          "type": "EMPTY_LINE",
+          "isExpanded": false
+        },
+        {
+          "isSelected": false,
+          "isActive": true,
+          "text": "{{0}} I chose to break up the components into separate files like I would in a production app.  I'm not a fan of tutorials that cram a bunch of components into one file because the content of the tutorial is short.  I think it's good to \"practice like you play.\"",
+          "textConfigs": [
+            {
+              "stylePreset": "greyItalic",
+              "display": "Note: ",
+              "linksTo": null,
+              "key": 52
+            }
+          ],
+          "key": 135,
+          "isExpanded": false,
+          "type": "TEXT"
+        },
+        {
+          "isSelected": false,
+          "isActive": true,
+          "text": "Route Components",
+          "size": 3,
+          "linksTo": null,
+          "key": 136,
+          "isExpanded": false,
+          "type": "HEADLINE"
+        },
+        {
+          "isSelected": false,
+          "isActive": true,
+          "type": "CODE_BLOCK",
+          "id": "create-route-components",
+          "showLineNumbers": false,
+          "codeValue": "\n$ cd web/src\n$ touch PrivateRoute.js\n$ touch PublicRoute.js\n",
+          "language": "bash",
+          "key": 137,
+          "showGutter": true,
+          "isExpanded": false
+        },
+        {
+          "isSelected": false,
+          "isActive": true,
+          "text": "We'll create two route components that will make it easy to determine pages that require authentication and those that do not.  Enter the following code into {{0}} and {{1}}",
+          "textConfigs": [
+            {
+              "stylePreset": "greyItalic",
+              "display": "PrivateRoute.js",
+              "linksTo": null,
+              "key": 53
+            },
+            {
+              "stylePreset": "greyItalic",
+              "display": "PublicRoute.js",
+              "linksTo": null,
+              "key": 54
+            }
+          ],
+          "key": 138,
+          "isExpanded": false,
+          "type": "TEXT"
+        },
+        {
+          "isSelected": false,
+          "isActive": true,
+          "text": "The {{0}} component accepts {{1}}, {{2}}, and {{3}} as props.  If {{4}} evaluates to true, we'll render the route with the component that was passed in.  Else, we'll redirect to the {{5}} that was passed in (which defaults to {{6}} if undefined). ",
+          "textConfigs": [
+            {
+              "stylePreset": "greyItalic",
+              "display": "PrivateRoute",
+              "linksTo": null,
+              "key": 55
+            },
+            {
+              "stylePreset": "greyItalic",
+              "display": "isAuthenticated",
+              "linksTo": null,
+              "key": 56
+            },
+            {
+              "stylePreset": "greyItalic",
+              "display": "redirectRoute",
+              "linksTo": null,
+              "key": 57
+            },
+            {
+              "stylePreset": "greyItalic",
+              "display": "component",
+              "linksTo": null,
+              "key": 58
+            },
+            {
+              "stylePreset": "greyItalic",
+              "display": "isAuthenticated",
+              "linksTo": null,
+              "key": 59
+            },
+            {
+              "stylePreset": "greyItalic",
+              "display": "redirectRoute",
+              "linksTo": null,
+              "key": 60
+            },
+            {
+              "stylePreset": "greyItalic",
+              "display": "/login",
+              "linksTo": null,
+              "key": 61
+            }
+          ],
+          "key": 139,
+          "isExpanded": false,
+          "type": "TEXT"
+        },
+        {
+          "isSelected": true,
+          "isActive": true,
+          "type": "CODE_BLOCK",
+          "id": "private-route",
+          "showLineNumbers": false,
+          "codeValue": "\n// PrivateRoute.js\n\nimport React, {Component} from 'react';\nimport {Route, Redirect} from \"react-router-dom\";\n\nexport const PrivateRoute = ({component: Component, ...rest}) => {\n const {isAuthenticated, redirectRoute = '/login'} = rest;\n return (\n   <Route\n     { ...rest }\n     render={ props =>\n       isAuthenticated\n         ? <Component { ...props } { ...rest }/>\n         : (\n           <Redirect\n             to={ {\n               pathname: redirectRoute,\n               state: {from: props.location}\n             } }\n           />\n         )\n     }\n   />\n )\n};",
+          "language": "javascript",
+          "key": 140,
+          "showGutter": true,
+          "isExpanded": false
+        },
+        {
+          "isSelected": false,
+          "isActive": true,
+          "text": "The {{0}} component will be used for routes that don't require authentication (i.e. the login page).  While this component isn't 100% necessary, it will allow for a cleaner and more consistent display for route definitions, as we'll see shortly).",
+          "textConfigs": [
+            {
+              "stylePreset": "greyItalic",
+              "display": "PublicRoute",
+              "linksTo": null,
+              "key": 62
+            }
+          ],
+          "key": 141,
+          "isExpanded": false,
+          "type": "TEXT"
+        },
+        {
+          "isSelected": false,
+          "isActive": true,
+          "type": "CODE_BLOCK",
+          "id": "public-route",
+          "showLineNumbers": false,
+          "codeValue": "\n// PublicRoute.js\n\nimport React, {Component} from 'react';\nimport {Route} from \"react-router-dom\";\n\nexport const PublicRoute = ({component: Component, ...rest}) => {\n  return (\n    <Route\n      { ...rest }\n      render={ props =>\n        <Component { ...props } { ...rest }/>\n      }\n    />\n  )\n};\n",
+          "language": "javascript",
+          "key": 142,
+          "showGutter": true,
+          "isExpanded": false
+        },
+        {
+          "isSelected": false,
+          "isActive": true,
+          "text": "Home Page",
+          "size": 3,
+          "linksTo": null,
+          "key": 143,
+          "isExpanded": false,
+          "type": "HEADLINE"
+        },
+        {
+          "isSelected": false,
+          "isActive": true,
+          "type": "CODE_BLOCK",
+          "id": "create-home-page-components",
+          "showLineNumbers": false,
+          "codeValue": "\n$ touch LoadingWrapper.js\n$ touch HomePage.js\n$ touch Contact.js\n",
+          "language": "bash",
+          "key": 144,
+          "showGutter": true,
+          "isExpanded": false
+        },
+        {
+          "isSelected": false,
+          "isActive": true,
+          "text": "Enter the following code into {{0}}.  This component will display a loading indicator while {{1}} evaluates to true.  Otherwise, it will render the component passed in via props.",
+          "textConfigs": [
+            {
+              "stylePreset": "greyItalic",
+              "display": "LoadingWrapper.js",
+              "linksTo": null,
+              "key": 63
+            },
+            {
+              "stylePreset": "greyItalic",
+              "display": "isLoading",
+              "linksTo": null,
+              "key": 64
+            }
+          ],
+          "key": 145,
+          "isExpanded": false,
+          "type": "TEXT"
+        },
+        {
+          "isSelected": false,
+          "isActive": true,
+          "type": "CODE_BLOCK",
+          "id": "loading-wrapper",
+          "showLineNumbers": false,
+          "codeValue": "\n// LoadingWrapper.js\n\nimport React from 'react';\n\nexport const Loading = ({message = 'Loading...'}) => <h3>{ message }</h3>;\n\nexport const LoadingWrapper = ({isLoading, children, message}) => {\n  return isLoading ? <Loading message={ message }/> : children;\n};\n",
+          "language": "javascript",
+          "key": 146,
+          "showGutter": true,
+          "isExpanded": false
+        },
+        {
+          "isSelected": false,
+          "isActive": true,
+          "text": "Enter the following into {{0}}.  This page will require authentication to view (aka {{1}}) and will simply display a string representation of the user for now.  Our constructor initializes the component state object.  When the component mounts, we call the fetchContacts() method, which will be populated shortly.",
+          "textConfigs": [
+            {
+              "stylePreset": "greyItalic",
+              "display": "HomePage.js",
+              "linksTo": null,
+              "key": 65
+            },
+            {
+              "stylePreset": "greyItalic",
+              "display": "PrivateRoute",
+              "linksTo": null,
+              "key": 66
+            }
+          ],
+          "key": 147,
+          "isExpanded": false,
+          "type": "TEXT"
+        },
+        {
+          "isSelected": false,
+          "isActive": true,
+          "type": "CODE_BLOCK",
+          "id": "home-page",
+          "showLineNumbers": false,
+          "codeValue": "\n// HomePage.js\n\nimport React, {Component} from 'react';\n\nexport default class HomePage extends Component {\n\n  constructor(props) {\n    super(props);\n    this.state = {contacts: [], isLoadingContacts: false};\n  }\n\n  componentDidMount() {\n    this.fetchContacts();\n  }\n  \n  fetchContacts() {\n    // we will populate this shortly\n  }\n\n  render() {\n   const {user} = this.props;\n   return (\n     <div>\n       <h1>Home Page</h1>\n       <p>{ user }</p>\n     </div>\n   );\n }\n}\n",
+          "language": "javascript",
+          "key": 148,
+          "showGutter": true,
+          "isExpanded": false
+        },
+        {
+          "isSelected": false,
+          "isActive": true,
+          "text": "Now let's display our contacts on the home page.  Enter the following code into {{0}}.  Our {{1}} component will simply be a display of the name and email fields.",
+          "textConfigs": [
+            {
+              "stylePreset": "greyItalic",
+              "display": "Contact.js",
+              "linksTo": null,
+              "key": 67
+            },
+            {
+              "stylePreset": "greyItalic",
+              "display": "<Contact />",
+              "linksTo": null,
+              "key": 68
+            }
+          ],
+          "key": 149,
+          "isExpanded": false,
+          "type": "TEXT"
+        },
+        {
+          "isSelected": false,
+          "isActive": true,
+          "type": "CODE_BLOCK",
+          "id": "contact-component",
+          "showLineNumbers": false,
+          "codeValue": "\n// Contact.js\n\nimport React from 'react';\n\nexport const Contact = ({contact}) => {\n  return (\n    <div>\n      { [\n        'Name:', contact.first_name, contact.last_name, '|',\n        'Email', contact.email\n      ].join(' ') }\n    </div>\n  );\n};\n",
+          "language": "javascript",
+          "key": 150,
+          "showGutter": true,
+          "isExpanded": false
+        },
+        {
+          "isSelected": false,
+          "isActive": true,
+          "text": "Add the following to the {{0}} method in {{1}}.  Here we set {{2}} to true and make a GET request to the endpoint we set up in django.  We set {{3}} from the response and {{4}} to false.",
+          "textConfigs": [
+            {
+              "stylePreset": "greyItalic",
+              "display": "fetchContacts()",
+              "linksTo": null,
+              "key": 69
+            },
+            {
+              "stylePreset": "greyItalic",
+              "display": "<HomePage />",
+              "linksTo": null,
+              "key": 70
+            },
+            {
+              "stylePreset": "greyItalic",
+              "display": "state.isLoadingContacts",
+              "linksTo": null,
+              "key": 71
+            },
+            {
+              "stylePreset": "greyItalic",
+              "display": "state.contacts",
+              "linksTo": null,
+              "key": 72
+            },
+            {
+              "stylePreset": "greyItalic",
+              "display": "state.isLoadingContacts",
+              "linksTo": null,
+              "key": 73
+            }
+          ],
+          "key": 151,
+          "isExpanded": false,
+          "type": "TEXT"
+        },
+        {
+          "isSelected": false,
+          "isActive": true,
+          "type": "CODE_BLOCK",
+          "id": "fetch-contacts-method",
+          "showLineNumbers": false,
+          "codeValue": "\n  fetchContacts() {\n    const url = '/api/v1/contacts/';\n    const options = {method: 'GET'};\n    const headers = {'Content-Type': 'application/json'};\n    this.setState({isLoadingContacts: true});\n    return fetch(url, {headers, ...options})\n      .then(r => r.json())\n      .then(contacts => {\n        this.setState({contacts, isLoadingContacts: false});\n      });\n  }\n\n",
+          "language": "javascript",
+          "key": 152,
+          "showGutter": true,
+          "isExpanded": false
+        },
+        {
+          "isSelected": false,
+          "isActive": true,
+          "text": "Add the following pieces to the render method to display our contacts.  While {{0}} is true, our {{1}} will display a loading indicator.  After we receive the response, the {{2}} list will be rendered.  Don't forget to add the imports.  {{3}} should look like {{4}} when complete.",
+          "textConfigs": [
+            {
+              "stylePreset": "greyItalic",
+              "display": "state.isLoadingContacts",
+              "linksTo": null,
+              "key": 74
+            },
+            {
+              "stylePreset": "greyItalic",
+              "display": "<LoadingWrapper/>",
+              "linksTo": null,
+              "key": 75
+            },
+            {
+              "stylePreset": "greyItalic",
+              "display": "<Contact />",
+              "linksTo": null,
+              "key": 76
+            },
+            {
+              "stylePreset": "greyItalic",
+              "display": "<HomePage />",
+              "linksTo": null,
+              "key": 77
+            },
+            {
+              "stylePreset": null,
+              "display": "this",
+              "linksTo": "https://github.com/mikejuliano/contact-manager-web/blob/master/src/HomePage.js",
+              "key": 78
+            }
+          ],
+          "key": 153,
+          "isExpanded": false,
+          "type": "TEXT"
+        },
+        {
+          "isSelected": false,
+          "isActive": true,
+          "type": "CODE_BLOCK",
+          "id": "final-home-page-render-method",
+          "showLineNumbers": false,
+          "codeValue": "\n\nimport React, {Component} from 'react';\nimport {Contact} from './Contact';\nimport {LoadingWrapper} from './LoadingWrapper';\n  \n  //...\n  \n  render() {\n    const {user} = this.props;\n    return (\n      <div>\n        <div>\n          <h1>Home Page</h1>\n          <p>{ user }</p>\n        </div>\n        <div>\n          <h3>Contacts</h3>\n          <LoadingWrapper\n            isLoading={ this.state.isLoadingContacts }\n            message={ 'Loading Contacts...' }>\n            {\n              this.state.contacts.map((contact, index) => (\n                <Contact\n                  key={ index }\n                  contact={ contact }\n                />\n              ))\n            }\n          </LoadingWrapper>\n        </div>\n      </div>\n    );\n  }\n\n",
+          "language": "javascript",
+          "key": 154,
+          "showGutter": true,
+          "isExpanded": false
+        },
+        {
+          "isSelected": false,
+          "isActive": true,
+          "url": "https://res.cloudinary.com/dmh4ucizb/image/upload/v1525962051/auth-tutorial-01/25-home-page-with-contacts.png",
+          "type": "IMAGE",
+          "key": 155,
+          "isExpanded": false,
+          "styles": {
+            "border": "solid 3px black"
+          }
+        },
+        {
+          "isSelected": false,
+          "isActive": true,
+          "text": "Login Page",
+          "size": 3,
+          "linksTo": null,
+          "key": 156,
+          "isExpanded": false,
+          "type": "HEADLINE"
+        },
+        {
+          "isSelected": false,
+          "isActive": true,
+          "type": "CODE_BLOCK",
+          "id": "create-login-page-components",
+          "showLineNumbers": false,
+          "codeValue": "\n\n$ touch LogoutButton.js\n$ touch LoginPage.js\n$ touch Login.css\n",
+          "language": "bash",
+          "key": 157,
+          "showGutter": true,
+          "isExpanded": false
+        },
+        {
+          "isSelected": false,
+          "isActive": true,
+          "text": "Enter the following code into {{0}}.  This is another conditional component that will show a logout button when authenticated.  If not authenticated, a message will be displayed.",
+          "textConfigs": [
+            {
+              "stylePreset": "greyItalic",
+              "display": "LogoutButton.js",
+              "linksTo": null,
+              "key": 79
+            }
+          ],
+          "key": 158,
+          "isExpanded": false,
+          "type": "TEXT"
+        },
+        {
+          "isSelected": false,
+          "isActive": true,
+          "type": "CODE_BLOCK",
+          "id": "logout-button",
+          "showLineNumbers": false,
+          "codeValue": "\n// LogoutButton.js\n\nimport React from 'react';\nimport {withRouter} from \"react-router-dom\";\n\nexport const LogoutButton = withRouter(({history, ...rest}) => {\n    const {isAuthenticated, handleLogout} = rest;\n    return isAuthenticated\n      ? (\n        <p>\n          <button\n            type=\"button\"\n            className=\"form-submit\"\n            onClick={ () => handleLogout(history) }>Logout\n          </button>\n        </p>\n      )\n      : <p>You are not logged in</p>;\n  }\n);\n",
+          "language": "javascript",
+          "key": 159,
+          "showGutter": true,
+          "isExpanded": false
+        },
+        {
+          "isSelected": false,
+          "isActive": true,
+          "text": "Enter the following into {{0}}.  This page will not require authentication (aka {{1}}).  The page contains a login form that calls {{2}} on submit ({{3}} is implemented in {{4}}).",
+          "textConfigs": [
+            {
+              "stylePreset": "greyItalic",
+              "display": "LoginPage.js",
+              "linksTo": null,
+              "key": 80
+            },
+            {
+              "stylePreset": "greyItalic",
+              "display": "PublicRoute",
+              "linksTo": null,
+              "key": 81
+            },
+            {
+              "stylePreset": "greyItalic",
+              "display": "this.props.attemptLogin",
+              "linksTo": null,
+              "key": 82
+            },
+            {
+              "stylePreset": "greyItalic",
+              "display": "attemptLogin",
+              "linksTo": null,
+              "key": 83
+            },
+            {
+              "stylePreset": "greyItalic",
+              "display": "App.js",
+              "linksTo": null,
+              "key": 84
+            }
+          ],
+          "key": 160,
+          "isExpanded": false,
+          "type": "TEXT"
+        },
+        {
+          "isSelected": false,
+          "isActive": true,
+          "type": "CODE_BLOCK",
+          "id": "login-page",
+          "showLineNumbers": false,
+          "codeValue": "\n// LoginPage.js\n\nimport React, {Component} from 'react';\nimport './Login.css';\n\nexport default class LoginPage extends Component {\n  constructor(props) {\n    super(props);\n    const {handlers} = props;\n    const {attemptLogin} = handlers;\n\n    this.handleChange = this.handleChange.bind(this);\n    this.attemptLogin = attemptLogin.bind(this);\n  }\n\n  handleChange(e) {\n    this.setState({[e.target.name]: e.target.value});\n  }\n\n  submit(e) {\n    e.preventDefault();\n    return this.attemptLogin(this.state.username, this.state.password);\n  }\n\n  render() {\n    return (\n      <div className=\"center\">\n        <div className=\"card\">\n          <h1>Login Page</h1>\n          <form>\n            <input\n              className=\"form-item\"\n              placeholder=\"Username goes here...\"\n              name=\"username\"\n              type=\"text\"\n              onChange={ this.handleChange }\n            />\n            <input\n              className=\"form-item\"\n              placeholder=\"Password goes here...\"\n              name=\"password\"\n              type=\"password\"\n              onChange={ this.handleChange }\n            />\n            <button\n              className=\"form-submit\"\n              value=\"SUBMIT\"\n              type=\"button\"\n              onClick={ (event) => this.submit(event) }>Login\n            </button>\n          </form>\n        </div>\n      </div>\n    );\n  }\n}\n",
+          "language": "javascript",
+          "key": 161,
+          "showGutter": true,
+          "isExpanded": false
+        },
+        {
+          "isSelected": false,
+          "isActive": true,
+          "text": "Add {{0}} into {{1}}",
+          "textConfigs": [
+            {
+              "stylePreset": null,
+              "display": "these styles",
+              "linksTo": "https://github.com/mikejuliano/contact-manager-web/blob/master/src/Login.css",
+              "key": 85
+            },
+            {
+              "stylePreset": "greyItalic",
+              "display": "Login.css",
+              "linksTo": null,
+              "key": 86
+            }
+          ],
+          "key": 162,
+          "isExpanded": false,
+          "type": "TEXT"
+        },
+        {
+          "isSelected": false,
+          "isActive": true,
+          "text": "Services",
+          "size": 3,
+          "linksTo": null,
+          "key": 163,
+          "isExpanded": false,
+          "type": "HEADLINE"
+        },
+        {
+          "isSelected": false,
+          "isActive": true,
+          "type": "CODE_BLOCK",
+          "id": "create-services",
+          "showLineNumbers": false,
+          "codeValue": "\n$ touch AuthService.js\n$ touch StorageService.js\n",
+          "language": "bash",
+          "key": 164,
+          "showGutter": true,
+          "isExpanded": false
+        },
+        {
+          "isSelected": false,
+          "isActive": true,
+          "text": "Enter the following into {{0}}.  This is a wrapper class for the browsers default localStorage.  Each method is implemented asynchronously.  By setting it up this way early in our app, we are not tied to synchronous methods.  In addition, when we implement this tutorial in {{1}} (coming soon), the transition will go more smoothly (localStorage in {{2}} is only offered asynchronously).",
+          "textConfigs": [
+            {
+              "stylePreset": "greyItalic",
+              "display": "StorageService.js",
+              "linksTo": null,
+              "key": 87
+            },
+            {
+              "stylePreset": null,
+              "display": "React Native",
+              "linksTo": "https://facebook.github.io/react-native/",
+              "key": 88
+            },
+            {
+              "stylePreset": null,
+              "display": "React Native",
+              "linksTo": "https://facebook.github.io/react-native/",
+              "key": 89
+            }
+          ],
+          "key": 165,
+          "isExpanded": false,
+          "type": "TEXT"
+        },
+        {
+          "isSelected": false,
+          "isActive": true,
+          "type": "CODE_BLOCK",
+          "id": "storage-service",
+          "showLineNumbers": false,
+          "codeValue": "\n// StorageService.js\n\nexport default class StorageService {\n  getItem(key) {\n    return Promise.resolve(localStorage.getItem(key));\n  }\n\n  setItem(key, value) {\n    localStorage.setItem(key, value);\n    return Promise.resolve(value);\n  }\n\n  removeItem(key) {\n    localStorage.removeItem(key);\n    return Promise.resolve(true);\n  }\n}\n",
+          "language": "javascript",
+          "key": 166,
+          "showGutter": true,
+          "isExpanded": false
+        },
+        {
+          "isSelected": false,
+          "isActive": true,
+          "text": "The full content of {{0}}, can be found {{1}}. Take note of the {{2}} and {{3}} methods. The {{4}} method calls the url we set up in django {{5}}, then checks for a valid response.  If the response is valid, a token will be returned.  We set the token in local storage.  The existence of the token in local storage is how we determine that the user is authenticated throughout the app.  Finally, we return a string representation of the user (which is crudely the user's name and the token, but I think it will suffice for the purposes of this tutorial).",
+          "textConfigs": [
+            {
+              "stylePreset": null,
+              "display": "AuthService.js",
+              "linksTo": "https://github.com/mikejuliano/contact-manager-web/blob/master/src/AuthService.js",
+              "key": 90
+            },
+            {
+              "stylePreset": null,
+              "display": "here",
+              "linksTo": "https://github.com/mikejuliano/contact-manager-web/blob/master/src/AuthService.js",
+              "key": 91
+            },
+            {
+              "stylePreset": "greyItalic",
+              "display": "authenticate",
+              "linksTo": null,
+              "key": 92
+            },
+            {
+              "stylePreset": "greyItalic",
+              "display": "getUser",
+              "linksTo": null,
+              "key": 93
+            },
+            {
+              "stylePreset": "greyItalic",
+              "display": "authenticate",
+              "linksTo": null,
+              "key": 94
+            },
+            {
+              "stylePreset": "greyItalic",
+              "display": "(/api-token-auth)",
+              "linksTo": null,
+              "key": 95
+            }
+          ],
+          "key": 167,
+          "isExpanded": false,
+          "type": "TEXT"
+        },
+        {
+          "isSelected": false,
+          "isActive": true,
+          "type": "CODE_BLOCK",
+          "id": "auth-service-authenticate",
+          "showLineNumbers": false,
+          "codeValue": "\n// this is a snippet from https://github.com/mikejuliano/contact-manager-web/blob/master/src/AuthService.js\n\nauthenticate(username, password) {\n    const url = '/api-token-auth/';\n    const options = {\n      method: 'POST',\n      body: JSON.stringify({username, password}),\n    };\n    return this.getTokenAsync()\n      .then(token => {\n        const headers = this.getHeaders(token, this.isAuthenticated);\n        return fetch(url, {headers, ...options}); // allows for headers override by spreading\n      })\n      .then(this.checkStatus) // raises an error in case response status is not a success\n      .then(response => response.json())\n      .then(response => {\n        const token = response ? response.token : null;\n        this.setTokenAsync(token);\n        this.isAuthenticated = !!token;\n        return this.getUser(token);\n      });\n  }\n",
+          "language": "javascript",
+          "key": 168,
+          "showGutter": true,
+          "isExpanded": false
+        },
+        {
+          "isSelected": false,
+          "isActive": true,
+          "type": "CODE_BLOCK",
+          "id": "auth-service-get-user",
+          "showLineNumbers": false,
+          "codeValue": "\n// this is a snippet from https://github.com/mikejuliano/contact-manager-web/blob/master/src/AuthService.js\n\n  getUser(token) {\n    return Promise.resolve(token ? `Hello Mike ${token}` : null);\n  }\n",
+          "language": "javascript",
+          "key": 169,
+          "showGutter": true,
+          "isExpanded": false
+        },
+        {
+          "isSelected": false,
+          "isActive": true,
+          "text": "Putting it all together",
+          "size": 3,
+          "linksTo": null,
+          "key": 170,
+          "isExpanded": false,
+          "type": "HEADLINE"
+        },
+        {
+          "isSelected": false,
+          "isActive": true,
+          "text": "We can see all of the components and services working together in {{0}}.  In the constructor, we first build an instance of {{1}} which takes {{2}} as a parameter.  We initialize our state with {{3}}, {{4}}, and {{5}}.  Finally, we call the init method which checks for a token in local storage and returns the user if it exists.",
+          "textConfigs": [
+            {
+              "stylePreset": null,
+              "display": "App.js",
+              "linksTo": "https://github.com/mikejuliano/contact-manager-web/blob/master/src/App.js",
+              "key": 96
+            },
+            {
+              "stylePreset": "greyItalic",
+              "display": "AuthService",
+              "linksTo": null,
+              "key": 97
+            },
+            {
+              "stylePreset": "greyItalic",
+              "display": "StorageService",
+              "linksTo": null,
+              "key": 98
+            },
+            {
+              "stylePreset": "greyItalic",
+              "display": "hasLoaded",
+              "linksTo": null,
+              "key": 99
+            },
+            {
+              "stylePreset": "greyItalic",
+              "display": "user",
+              "linksTo": null,
+              "key": 100
+            },
+            {
+              "stylePreset": "greyItalic",
+              "display": "isAuthenticated",
+              "linksTo": null,
+              "key": 101
+            }
+          ],
+          "key": 171,
+          "isExpanded": false,
+          "type": "TEXT"
+        },
+        {
+          "isSelected": false,
+          "isActive": true,
+          "type": "CODE_BLOCK",
+          "id": "app-js-init",
+          "showLineNumbers": false,
+          "codeValue": "\n// snippet from App.js \n\n constructor() {\n    super();\n    // AuthService requires an instance of StorageService\n    // we create AuthService here so that there is only one copy throughout the app\n    this.authService = new AuthService({storageService: new StorageService()});\n\n    // initialize our state object\n    this.state = {hasLoaded: false, user: null, isAuthenticated: false};\n\n    // kick off asynchronous initialization\n    this.init();\n  }\n\n  init() {\n    this.authService.init() // check for token and fetch user if token exists\n      .then(user => this.setUser(user));\n  }\n",
+          "language": "javascript",
+          "key": 172,
+          "showGutter": true,
+          "isExpanded": false
+        },
+        {
+          "isSelected": false,
+          "isActive": true,
+          "text": "Inside the render method... The {{0}} component will display a \"Loading...\" indicator until {{1}} evaluates to true.  We wrap our route components inside a {{2}}.  We can also see our route components at work here.  The {{3}} is set up as a {{4}}.  The {{5}} is set up as a {{6}}.",
+          "textConfigs": [
+            {
+              "stylePreset": "greyItalic",
+              "display": "LoadingWrapper",
+              "linksTo": null,
+              "key": 102
+            },
+            {
+              "stylePreset": "greyItalic",
+              "display": "state.hasLoaded",
+              "linksTo": null,
+              "key": 103
+            },
+            {
+              "stylePreset": "greyItalic",
+              "display": "<Router>...</Router>",
+              "linksTo": null,
+              "key": 104
+            },
+            {
+              "stylePreset": "greyItalic",
+              "display": "LoginPage",
+              "linksTo": null,
+              "key": 105
+            },
+            {
+              "stylePreset": "greyItalic",
+              "display": "PublicRoute",
+              "linksTo": null,
+              "key": 106
+            },
+            {
+              "stylePreset": "greyItalic",
+              "display": "HomePage",
+              "linksTo": null,
+              "key": 107
+            },
+            {
+              "stylePreset": "greyItalic",
+              "display": "PrivateRoute",
+              "linksTo": null,
+              "key": 108
+            }
+          ],
+          "key": 173,
+          "isExpanded": false,
+          "type": "TEXT"
+        },
+        {
+          "isSelected": false,
+          "isActive": true,
+          "type": "CODE_BLOCK",
+          "id": "app-js-render",
+          "showLineNumbers": false,
+          "codeValue": "\n// snippet from App.js \n\n  render() {\n    return (\n      <LoadingWrapper isLoading={ !this.state.hasLoaded }>\n        <div className=\"App\">\n          <Router>\n            <div>\n              <LogoutButton\n                isAuthenticated={ this.state.isAuthenticated }\n                handleLogout={ this.logout.bind(this) }\n              />\n              <PrivateRoute\n                path=\"/home\"\n                exact={ true }\n                component={ HomePage }\n                isAuthenticated={ this.state.isAuthenticated }\n                user={ this.state.user }\n              />\n              <PublicRoute\n                path=\"/login\"\n                exact={ true }\n                component={ LoginPage }\n                handlers={ {\n                  attemptLogin: this.attemptLogin.bind(this)\n                } }\n              />\n            </div>\n          </Router>\n        </div>\n      </LoadingWrapper>\n    )\n  }\n",
+          "language": "javascript",
+          "key": 174,
+          "showGutter": true,
+          "isExpanded": false
+        },
+        {
+          "isSelected": false,
+          "isActive": true,
+          "url": "https://res.cloudinary.com/dmh4ucizb/image/upload/v1525715657/auth-tutorial-01/23-login-page.png",
+          "type": "IMAGE",
+          "key": 175,
+          "isExpanded": false
+        },
+        {
+          "isSelected": false,
+          "isActive": true,
+          "text": "Our login method calls the authenticate method with the username and password from the form.  If it's a valid username/password combination, we set the user, then navigate to the {{0}}.  ",
+          "textConfigs": [
+            {
+              "stylePreset": "greyItalic",
+              "display": "HomePage",
+              "linksTo": null,
+              "key": 109
+            }
+          ],
+          "key": 176,
+          "isExpanded": false,
+          "type": "TEXT"
+        },
+        {
+          "isSelected": false,
+          "isActive": true,
+          "text": "{{0}}",
+          "textConfigs": [
+            {
+              "display": "TODO: Network Response?",
+              "key": 110,
+              "id": 0,
+              "styles": "todo"
+            }
+          ],
+          "key": 177,
+          "isExpanded": false,
+          "type": "TEXT"
+        },
+        {
+          "isSelected": false,
+          "isActive": true,
+          "type": "CODE_BLOCK",
+          "id": "app-js-attempt-login",
+          "showLineNumbers": false,
+          "codeValue": "\n// snippet from App.js \n\n  attemptLogin(username, password) { // authenticate, set the user, navigate to home page\n    return this.authService.authenticate(username, password)\n      .then(user => this.setUser(user, () => this.goHome()))\n      .catch(err => console.error(err));\n  }\n",
+          "language": "javascript",
+          "key": 178,
+          "showGutter": true,
+          "isExpanded": false
+        },
+        {
+          "isSelected": false,
+          "isActive": true,
+          "text": "On the {{0}}, we are presented with a {{1}} (because we are authenticated) and a string representation of the user.",
+          "textConfigs": [
+            {
+              "stylePreset": "greyItalic",
+              "display": "HomePage",
+              "linksTo": null,
+              "key": 111
+            },
+            {
+              "stylePreset": "greyItalic",
+              "display": "LogoutButton",
+              "linksTo": null,
+              "key": 112
+            }
+          ],
+          "key": 179,
+          "isExpanded": false,
+          "type": "TEXT"
+        },
+        {
+          "isSelected": false,
+          "isActive": true,
+          "url": "https://res.cloudinary.com/dmh4ucizb/image/upload/v1525715657/auth-tutorial-01/24-home-page.png",
+          "type": "IMAGE",
+          "key": 180,
+          "isExpanded": false
+        },
+        {
+          "isSelected": false,
+          "isActive": true,
+          "text": "When the user clicks {{0}}, we remove the token from localStorage and redirect to {{1}}.",
+          "textConfigs": [
+            {
+              "stylePreset": "greyItalic",
+              "display": "Logout",
+              "linksTo": null,
+              "key": 113
+            },
+            {
+              "stylePreset": "greyItalic",
+              "display": "LoginPage",
+              "linksTo": null,
+              "key": 114
+            }
+          ],
+          "key": 181,
+          "isExpanded": false,
+          "type": "TEXT"
+        },
+        {
+          "isSelected": false,
+          "isActive": true,
+          "type": "CODE_BLOCK",
+          "id": "app-js-logout",
+          "showLineNumbers": false,
+          "codeValue": "\n// snippet from App.js \n\n  logout(history) {\n    this.authService.logout(); // remove token from localStorage\n    this.setUser(null, () => this.goToLogin(history)); // clear the user, then navigate to login page\n  }\n",
+          "language": "javascript",
+          "key": 182,
+          "showGutter": true,
+          "isExpanded": false
+        }
+      ],
+      "title": "Create React App"
+    }
+  ],
+  "options": {
+    "renderTitle": true,
+    "hasOutline": false
+  },
+  "title": "Contact Manager Tutorial 4"
+}
